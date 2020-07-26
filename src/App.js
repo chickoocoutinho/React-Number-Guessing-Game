@@ -1,9 +1,12 @@
 import React from 'react';
+import HomePage from './components/HomePage/HomePage';
+import GameLevel from './components/GameLevel/GameLevel';
 
 const App = () => {
   return (
     <>
-    <h1>Hello</h1>
+    <HomePage />
+    <GameLevel level={1}/>
     </>
   );
 }

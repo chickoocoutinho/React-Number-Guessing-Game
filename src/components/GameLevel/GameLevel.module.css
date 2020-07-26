@@ -1,0 +1,30 @@
+.container{
+    height: 100vh;
+    transition: background-color 2s linear;
+}
+.correct{
+    background-color: #9af03d;
+}
+.hot{
+    background-color: #ff2415;
+}
+.warm{
+    background-color: #ffec45;
+}
+.cold{
+    background-color: #9cd7ff;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 900px;
+    margin: 0 auto;
+}
+@media (max-width:900px){
+    .content{
+        width: 90%;
+        margin: 0 5%;
+    }
+}
