@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from './HomePage.module.css';
 
+import Div100vh from 'react-div-100vh'
+
+
 const HomePage = () => {
     return (
-        <div className={styles.background}>
+        <Div100vh className={styles.background}>
             <div className={styles.container}>
                 <h1 className={styles.heading}>Guess the Number</h1>
                 <div className={styles.instructions}>
@@ -22,7 +25,7 @@ const HomePage = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </Div100vh>
     );
 }
 

@@ -1,6 +1,6 @@
 .background{
     background: linear-gradient(#ffec45, #ff2415);
-    border-bottom: 5px solid #060a0e;
+    outline: 5px solid #060a0e;
 }
 .container{
     display: flex;

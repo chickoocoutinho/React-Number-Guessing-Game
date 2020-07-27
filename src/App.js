@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
+
 import HomePage from './components/HomePage/HomePage';
 import GameLevel from './components/GameLevel/GameLevel';
+//import Footer from './components/Footer/Footer';
 
 const App = () => {
   const [levels, setLevels] = useState([1]);
@@ -20,7 +22,6 @@ const App = () => {
   }
 
   return (
-    <>
     <div onWheel={onScroll}>
       <HomePage />
       {
@@ -31,8 +32,6 @@ const App = () => {
         })
       }   
     </div> 
-  
-    </>
   );
 }
 

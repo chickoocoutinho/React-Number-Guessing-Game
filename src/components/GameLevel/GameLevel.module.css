@@ -1,6 +1,6 @@
 .container{
     transition: background-color 2s linear;
-    border-bottom: 5px solid #060a0e;
+    outline: 5px solid #060a0e;
 }
 .correct{
     background-color: #9af03d;
