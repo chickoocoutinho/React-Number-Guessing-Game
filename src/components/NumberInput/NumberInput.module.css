@@ -2,24 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 20px;
 }
 .container input{
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    padding: 50px;
+    padding: 40px;
     text-align: center;
     font-size: 20px;
     border: 2px solid #060a0e;
 }
+
 /* Chrome, Safari, Edge, Opera */
 .container input::-webkit-outer-spin-button,
 .container input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 .container input[type=number] {
   -moz-appearance: textfield;
@@ -33,10 +33,85 @@
     width: 202px;
     padding: 20px 0;
     transition: 0.5s;
-    margin: 80px 0 30px 0;
+    margin: 40px 0 30px 0;
 }
 .container button:hover{
     color: #060a0e;
     background-color: #ffffff;
-    border: 2px solid #060a0e;
+    outline: 2px solid #060a0e;
+}
+.modal{
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  top: 5px;
+  width: 250px; 
+  height: auto; 
+  background-color: #060a0e;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 23px -3px #060a0e;
+
+  animation: slidein 3s forwards 0s ease-out ;
+}
+.null{
+  display: none;
+}
+
+.wrong:focus{
+  animation: shake 1s forwards 0.1s ease;
+}
+
+.correct:focus{
+  animation: shakeUp 1s forwards 0.1s ease;
+}
+
+/*Animations */
+
+@keyframes slidein{
+    0%{
+      transform: scale(1) translate(-50%, -100%) ;
+      }
+  25%{
+      transform: translate(-50%, 0);
+      }
+  100%{
+    transform: scale(0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shakeUp {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(0, 4px, 0);
+  }
 }

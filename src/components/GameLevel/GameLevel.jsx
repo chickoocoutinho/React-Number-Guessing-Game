@@ -1,39 +1,66 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, useRef} from 'react';
 import styles from './GameLevel.module.css';
 import cx from 'classnames';
+import Div100vh from 'react-div-100vh'
 
 import NumberInput from '../NumberInput/NumberInput';
 
-const GameLevel = ({level}) => {
+const GameLevel = ({level, nextLevel}) => {
     const [number, setNumber]= useState(1);
     const [userInput, setUserInput]= useState();
-    const [gameState, setGameState]= useState(null)
+    const [gameState, setGameState]= useState({
+        state: "",
+        style: null
+    });
+    const levelRef= useRef(null);
 
     useEffect(()=>{
         setNumber(()=> Math.round((Math.random() * 100 * level) + 1) )
-    },[]);
+    },[level]);
+
+    const scrollDown = ()=>{
+        setTimeout(() => {
+            window.scrollTo({top: levelRef.current.offsetTop + levelRef.current.offsetHeight , behavior: 'smooth'})
+        }, 2000);
+    };
 
     const checkNumber= ()=>{
         let x= Math.abs(number- userInput);
         if (x===0){
-            setGameState(styles.correct)
+            setGameState({
+                state: "Cottect !!",
+                style: styles.correct
+            })
+            nextLevel(level+1);
+            scrollDown();
         }
         else if (x>=1 && x<=4)
-            setGameState(styles.hot)
+            setGameState({
+                state: "Hot",
+                style: styles.hot
+            })
         else if (x>=5 && x<=15 )
-            setGameState(styles.warm);
+            setGameState({
+                state: "Warm",
+                style: styles.warm
+            });
         else
-            setGameState(styles.cold);
+            setGameState({
+                state: "Cold",
+                style: styles.cold
+            });
     };
 
     return (
-        <div className={cx(styles.container,gameState)}>
-            <div className={styles.content}>
-                <NumberInput level={level} setUserInput={setUserInput} 
-                    checkNumber={checkNumber} userInput={userInput} number={number} />
-                <h2>Hott</h2>
+        <Div100vh className={cx(styles.container,gameState.style)}>
+            <div className={styles.content} ref={levelRef}>
+                <h2>Level {level}</h2>
+                <h6>Range 1 - {level*100}</h6>
+                <NumberInput level={level} setUserInput={setUserInput} gameState={gameState} 
+                    checkNumber={checkNumber} userInput={userInput} />
+                <h3>{gameState.state}</h3>
             </div>
-        </div>
+        </Div100vh>
     );
 }
 
