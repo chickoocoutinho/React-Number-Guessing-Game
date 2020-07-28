@@ -1,12 +1,13 @@
-## Number Guessing game built using react. 
+# Number Guessing game built using react. 
+[Live site](https://github.com/)
 
 ## Description
 The web app generates a random number between 1-100 and the user is allowed to make any number of guesses, until he/she finds the correct answer.
 If the difference between the random number generated and the user’s input is:
-    a.  0 the app will display ‘Correct!’ - Green
-    b.  1-4 the app will display ‘Hot!!’ - Red
-    c.  5-15 the app will display ‘Warm’ - Yellow
-    d. For anything beyond, display ‘Cold’ - Blue
+    *  0 the app will display ‘Correct!’ - Green
+    *  1-4 the app will display ‘Hot!!’ - Red
+    *  5-15 the app will display ‘Warm’ - Yellow
+    * For anything beyond, display ‘Cold’ - Blue
 After guessing correctly, you unlock the next level with the higer range. 
 
 ## Available Scripts
