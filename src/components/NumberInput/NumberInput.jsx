@@ -47,13 +47,18 @@ const NumberInput = ({setUserInput, userInput, checkNumber, level, gameState}) =
             setUserInput(value);
     };
 
+    const handleKeyboardEnter= (event)=>{
+        if(event.charCode === 13)
+            handleSubmit(event)
+    }
+
     return (
         <div className={styles.container}>
-            <input type="number" id="user input" placeholder="Guess" 
-                disabled={gameState.state==="Cottect !!"? true:false}          
-                onChange={handleUserInput} value={userInput}/>
-            <button onClick={handleSubmit} disabled={gameState.state==="Cottect !!"? true:false}
-                className={gameState.state==="Cottect !!"?styles.correct:styles.wrong}> 
+            <input type="number" id="user input" placeholder="Guess"
+                disabled={gameState.state==="Correct !"? true:false} onKeyPress={handleKeyboardEnter}         
+                onChange={handleUserInput} value={userInput} />
+            <button onClick={handleSubmit} disabled={gameState.state==="Correct !"? true:false}
+                className={gameState.state==="Correct !"?styles.correct:styles.wrong} > 
                 Submit 
             </button>
             <div className={isError.error? handleError():styles.null}>

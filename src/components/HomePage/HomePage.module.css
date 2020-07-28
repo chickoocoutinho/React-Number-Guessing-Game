@@ -1,14 +1,16 @@
 .background{
     background: linear-gradient(#ffec45, #ff2415);
     outline: 5px solid #060a0e;
+    height: auto;
 }
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 900px;
     margin: 0 auto;
+    padding:  60px 0 150px 0;
 }
 .heading{
     text-align: center;
