@@ -1,5 +1,5 @@
 # Number Guessing game built using react. 
-[Live site](https://github.com/)
+[Live site](https://can-you-guess-the-number.netlify.app/)
 
 ## Description
 The web app generates a random number between 1-100 and the user is allowed to make any number of guesses, until he/she finds the correct answer.
